@@ -1,0 +1,9 @@
+
+    <angular-slickgrid gridId="grid28"
+                       [columnDefinitions]="columnDefinitions"
+                       [gridOptions]="gridOptions"
+                       [dataset]="dataset"
+                       (onGridStateChanged)="handleOnGridStateChanged($any($event).detail)"
+                       (onAngularGridCreated)="angularGridReady($any($event).detail)">
+    </angular-slickgrid>
+  

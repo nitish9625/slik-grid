@@ -1,0 +1,17 @@
+/* .slickgrid-container{
+    width: 500px !important;
+}
+.div#gridId {
+    width: 500px !important;
+    background-color: aquamarine;
+} */
+
+.slick-header {
+    color: red !important;
+    background: aquamarine !important;}
+
+
+    .slickgrid-container .slick-header-columns .slick-header-column.ui-state-default {
+        background: #e02424 !important;
+       
+    }

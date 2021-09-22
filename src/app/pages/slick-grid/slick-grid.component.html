@@ -1,0 +1,58 @@
+<!-- <div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">UserId</th>
+            <th scope="col">title</th>
+            <th scope="col">Completed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.userId}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.completed}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div> -->
+
+<!-- dx grid using show api data -->
+
+<dx-tree-list id="Task"
+[dataSource]="data"
+[autoExpandAll]="true"
+[columnAutoWidth]="true"
+[showBorders]="true"
+[showRowLines]="true">
+<dxo-scrolling mode="standard">
+</dxo-scrolling>
+<dxo-selection mode="multiple" [recursive]="true"></dxo-selection>
+<dxo-search-panel [visible]="true"></dxo-search-panel>
+<dxo-header-filter [visible]="true"></dxo-header-filter>
+<dxo-editing [allowUpdating]="true" [allowDeleting]="true"mode="popup">
+  <dxo-popup title="Crud Operation"
+  [showTitle]="true"
+  [width]="500"
+  [height]="400"></dxo-popup>
+  <dxo-form>
+    <dxi-item itemType="group">
+      <dxi-item dataField="userId"></dxi-item>
+      <dxi-item dataField="title"></dxi-item>
+      <dxi-item dataField="completed"></dxi-item>
+    </dxi-item>
+  </dxo-form>
+</dxo-editing>
+
+<dxo-paging [enabled]="true" [pageSize]="10"></dxo-paging>
+<dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[5,10,20]" [showInfo]="true"></dxo-pager>
+<dxi-column dataField="id"></dxi-column>
+<dxi-column dataField="userId"></dxi-column>
+<dxi-column dataField="title"></dxi-column>
+<dxi-column dataField="completed"></dxi-column>
+
+
+</dx-tree-list>

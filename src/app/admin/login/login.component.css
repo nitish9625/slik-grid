@@ -1,0 +1,14 @@
+
+
+.editable-field {
+  background-color: rgba(227, 240, 251, 0.569) !important;
+}
+.unsaved-editable-field {
+  background-color: #fbfdd1 !important;
+}
+.button-style {
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid 
+  
+}

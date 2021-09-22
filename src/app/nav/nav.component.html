@@ -1,0 +1,71 @@
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/pages/home">Home</a>
+          </li>
+  
+  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/pages/slickgrid">SlickGrid</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/pages/parent-child-row">Parent Child Row</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="pages/row-detail">Row Details</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="?/pages/http-client">Http Client</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/pages/Formategrid">Formate grid</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/pages/crud-operation">Crud Operations</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/Grid-data">Grid Data</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin/list">List</a>
+          </li>
+  
+         
+        </ul>
+        <div class="d-flex">
+        
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+  
+            <li class="nav-item">
+              <a class="nav-link" routerLink="login" >Login</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" routerLink="Signup">SignUp</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" (click)="logout()">Logout{{allUserData}}</a>
+            </li>
+          </ul>
+        
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  

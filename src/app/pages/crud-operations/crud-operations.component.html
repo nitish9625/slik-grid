@@ -1,0 +1,112 @@
+<div class="d-flex">
+    <button (click)="clickAddData()" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add Row</button>
+</div>
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">Email</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of allData; index as i">
+            <td>{{i+1}}</td>
+            <td>{{data.firstName}}</td>
+            <td>{{data.lastName}}</td>
+            <td>{{data.mobile}}</td>
+            <td>{{data.email}}</td>
+            <td>
+                <button type="button" (click)="getEdit(data)" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">edit</button>
+                <button class="btn btn-danger mx-3" (click)="deleteData(data)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+
+
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title text-center" id="staticBackdropLabel">Add new Row</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         
+            <form [formGroup]="formValue" novalidate>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">First Name</label>
+                  <input type="text" formControlName="firstName" class="form-control" id="exampleInputEmail1" name="firstName" aria-describedby="emailHelp">
+                  <!-- validation first name -->
+
+                  <div *ngIf="formValue.controls['firstName'].invalid && (formValue.controls['firstName'].dirty || formValue.controls['firstName'].touched)">
+                    <div *ngIf="formValue.controls['firstName'].errors?.required"> <span style="color: red;">First Name must be required *</span></div>
+                    <div *ngIf="formValue.controls['firstName'].errors?.minlength || formValue.controls['firstName'].errors?.maxlength"><span style="color: red;">First name is greater than four and less than tweenty*</span></div>
+                      </div>
+
+                      <div *ngIf="formValue.controls['firstName'].errors?.pattern"><span style="color: red;">Invalid Character *</span>
+                      </div>
+                    </div>
+                
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Last Name</label>
+                    <input type="text" formControlName="lastName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                    <!-- validation lastname -->
+                    <div *ngIf="formValue.controls['lastName'].invalid && (formValue.controls['lastName'].dirty || formValue.controls['lastName'].touched)">
+                      <div *ngIf="formValue.controls['lastName'].errors?.required"> <span style="color: red;">First Name must be required *</span></div>
+                      <div *ngIf="formValue.controls['lastName'].errors?.minlength || formValue.controls['lastName'].errors?.maxlength"><span style="color: red;">First name is greater than four and less than tweenty*</span></div>
+                        </div>
+  
+                        <div *ngIf="formValue.controls['lastName'].errors?.pattern"><span style="color: red;">Invalid Character *</span>
+                        </div>
+
+                  </div>
+                 
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Mobile Number</label>
+                    <input type="text" formControlName="mobile" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                    <div *ngIf="formValue.controls['mobile'].invalid && (formValue.controls['mobile'].dirty || formValue.controls['mobile'].touched)">
+
+                      <div *ngIf="formValue.controls['mobile'].errors?.required"> <span style="color: red;">Phone number is required *</span></div>
+                      <div *ngIf="formValue.controls['mobile'].errors?.pattern"> <span style="color: red;">Phone is not valied *</span></div>
+                        </div>
+
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+
+                    <!-- email validation -->
+                    <div *ngIf="formValue.controls['email'].invalid && (formValue.controls['email'].dirty || formValue.controls['email'].touched)">
+                      
+                      <div *ngIf="formValue.controls['email'].errors?.required"> <span style="color: red;">email is required *</span></div>
+                      <div *ngIf="formValue.controls['email'].errors?.pattern"> <span style="color: red;">email is not valied *</span></div>
+                        </div>
+
+                  </div>
+              </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" *ngIf="showAdd" class="btn btn-primary" [disabled]="!formValue.valid" (click)="postCrudDetails()">Add Now</button>
+          <button type="button" *ngIf="showUpdate" class="btn btn-primary" (click)="updateDetails()">update</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+  <!-- reactve form validation -->
+ 

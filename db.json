@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 5,
+      "firstName": "john",
+      "lastName": "jsdghdsj",
+      "mobile": "45454165464",
+      "email": "john@gmail.com"
+    },
+    {
+      "id": 6,
+      "firstName": "nidsf",
+      "lastName": "dfgfg",
+      "mobile": "dfbg",
+      "email": "sdc"
+    },
+    {
+      "id": 7,
+      "firstName": "nidsf",
+      "lastName": "dfgfg",
+      "mobile": "dfbg",
+      "email": "dfgfg"
+    },
+    {
+      "id": 8,
+      "firstName": "Ajay",
+      "lastName": "thakur",
+      "mobile": "8580456451",
+      "email": "ajay@gmail.com"
+    }
+  ],
+  "SignupUser": [
+    {
+      "fullname": "dfgfg",
+      "email": "dfbg@gmail.com",
+      "password": "123",
+      "mobile": "dfgfg",
+      "id": 1
+    },
+    {
+      "fullname": "nitish",
+      "email": "dfbgrt@gmail.com",
+      "password": "1234",
+      "mobile": "411251315",
+      "id": 2
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

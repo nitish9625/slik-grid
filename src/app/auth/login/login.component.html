@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <h1>Login</h1>
+            <h5>Please Enter email Id & password</h5>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <div class="mb-3 mt-4">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Login</button>
+
+               
+              </form>
+              <a class="mt-4" routerLink="/Signup">New user? Click to Register</a>
+        </div>
+    </div>
+</div>
+
